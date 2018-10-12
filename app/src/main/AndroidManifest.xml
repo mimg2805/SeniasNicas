@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="marcosmiranda.seniasnicas">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/seniasnicas_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/seniasnicas_logo"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".MainMenu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Letras" />
+        <activity android:name=".Diccionario" />
+        <activity android:name=".Galeria" />
+        <activity android:name=".WordList" />
+        <activity android:name=".AnatomiaWordList" />
+        <activity android:name=".AnimalesWordList" />
+        <activity android:name=".ColoresWordList" />
+        <activity android:name=".ComidaWordList" />
+        <activity android:name=".DireccionesWordList" />
+        <activity android:name=".EmergenciasWordList" />
+        <activity android:name=".FamiliaWordList" />
+        <activity android:name=".GeografiaWordList" />
+        <activity android:name=".NumerosWordList" />
+        <activity android:name=".RopaWordList" />
+        <activity android:name=".SaludosWordList" />
+        <activity android:name=".TiempoWordList" />
+        <activity android:name=".TrabajosWordList" />
+        <activity android:name=".TransporteWordList" />
+        <activity android:name=".VerbosWordList" />
+    </application>
+
+</manifest>

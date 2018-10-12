@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nicaDarkBlue"
+    tools:context=".Diccionario"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageView
+        android:id="@+id/imgDictionary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/book" />
+
+    <TextView
+        android:id="@+id/txtViewDictionary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
+        android:text="@string/dic"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgDictionary"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/dic" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="440dp"
+        android:layout_marginTop="64dp"
+        android:clipToPadding="false"
+        android:fillViewport="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnAnatomia"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/anatomia_button"
+                    android:drawableStart="@drawable/male"
+                    android:onClick="anatomia"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_anatomia"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_anatomia" />
+
+                <Button
+                    android:id="@+id/btnAnimales"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/animales_button"
+                    android:drawableStart="@drawable/animal_prints"
+                    android:onClick="animales"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_animales"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_animales" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnColores"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/colores_button"
+                    android:drawableStart="@drawable/palette"
+                    android:onClick="colores"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_colores"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_colores" />
+
+                <Button
+                    android:id="@+id/btnComida"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/comida_button"
+                    android:drawableStart="@drawable/utensils"
+                    android:onClick="comida"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_comida"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_comida" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnDirecciones"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/direcciones_button"
+                    android:drawableStart="@drawable/compass"
+                    android:onClick="direcciones"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_direcciones"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_direcciones" />
+
+                <Button
+                    android:id="@+id/btnEmergencias"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/emergencias_button"
+                    android:drawableStart="@drawable/med_cross"
+                    android:onClick="emergencias"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_emergencias"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_emergencias" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnFamilia"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/relationships_button"
+                    android:drawableStart="@drawable/users"
+                    android:onClick="familia"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_familia"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_familia" />
+
+                <Button
+                    android:id="@+id/btnGeografía"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/geografia_button"
+                    android:drawableStart="@drawable/earth"
+                    android:onClick="geografia"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_geografia"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_geografia" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnNúmeros"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/numeros_button"
+                    android:drawableStart="@drawable/numbers"
+                    android:onClick="numeros"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_numeros"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_numeros" />
+
+                <Button
+                    android:id="@+id/btnRopa"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/ropa_button"
+                    android:drawableStart="@drawable/shirt"
+                    android:onClick="ropa"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_ropa"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_ropa" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnSaludos"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/saludos_button"
+                    android:drawableStart="@drawable/handshake"
+                    android:onClick="saludos"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_saludos"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_saludos" />
+
+                <Button
+                    android:id="@+id/btnTiempo"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/tiempo_button"
+                    android:drawableStart="@drawable/clock"
+                    android:onClick="tiempo"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_tiempo"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_tiempo" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnTrabajos"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/trabajos_button"
+                    android:drawableStart="@drawable/graduation_cap"
+                    android:onClick="trabajos"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_trabajos"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_trabajos" />
+
+                <Button
+                    android:id="@+id/btnTransporte"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/transporte_button"
+                    android:drawableStart="@drawable/car"
+                    android:onClick="transporte"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_transporte"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_transporte" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnVerbos"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/verbos_button"
+                    android:drawableStart="@drawable/bed"
+                    android:onClick="verbos"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_verbos"
+                    android:textSize="12sp"
+                    tools:text="@string/categoria_verbos" />
+
+                <!--
+                <Button
+                    android:id="@+id/btnVerbos"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/verbos_button"
+                    android:drawableStart="@drawable/bed"
+                    android:onClick="verbos"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="@integer/shadowRadius"
+                    android:text="@string/categoria_verbos"
+                    android:textSize="12sp"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    tools:text="@string/categoria_verbos" />
+                -->
+
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

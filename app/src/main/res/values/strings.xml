@@ -1,0 +1,312 @@
+<resources>
+    <string name="app_name" translatable="false">Señas Nicas</string>
+    <string name="abc">Abecedario</string>
+    <string name="dic">Diccionario</string>
+    <string name="exit">Salir</string>
+
+    <!-- Variables -->
+    <integer name="shadowRadius">3</integer>
+    <string name="extra_app_string">com.marcosmiranda.seniasnicas</string>
+    <string name="extra_title">com.marcosmiranda.seniasnicas.TITLE</string>
+    <string name="extra_category">com.marcosmiranda.seniasnicas.CATEGORY</string>
+    <string name="extra_image">com.marcosmiranda.seniasnicas.IMAGE</string>
+    <string name="extra_video">com.marcosmiranda.seniasnicas.VIDEO</string>
+
+    <!-- Letras -->
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="ch">CH</string>
+    <string name="d">D</string>
+    <string name="e">E</string>
+    <string name="f">F</string>
+    <string name="g">G</string>
+    <string name="h">H</string>
+    <string name="i">I</string>
+    <string name="j">J</string>
+    <string name="k">K</string>
+    <string name="l">L</string>
+    <string name="ll">LL</string>
+    <string name="m">M</string>
+    <string name="n">N</string>
+    <string name="ñ">Ñ</string>
+    <string name="o">O</string>
+    <string name="p">P</string>
+    <string name="q">Q</string>
+    <string name="r">R</string>
+    <string name="rr">RR</string>
+    <string name="s">S</string>
+    <string name="t">T</string>
+    <string name="u">U</string>
+    <string name="v">V</string>
+    <string name="w">W</string>
+    <string name="x">X</string>
+    <string name="y">Y</string>
+    <string name="z">Z</string>
+
+    <!-- Categorías del diccionario (12) -->
+    <string name="categoria_anatomia">Anatomía</string>
+    <string name="categoria_animales">Animales</string>
+    <string name="categoria_colores">Colores</string>
+    <string name="categoria_comida">Comida</string>
+    <string name="categoria_direcciones">Direcciones</string>
+    <string name="categoria_emergencias">Emergencias</string>
+    <string name="categoria_familia">Familia</string>
+    <string name="categoria_geografia">Geografía</string>
+    <string name="categoria_numeros">Números</string>
+    <string name="categoria_ropa">Ropa</string>
+    <string name="categoria_saludos">Saludos</string>
+    <string name="categoria_tiempo">Tiempo</string>
+    <string name="categoria_trabajos">Trabajos</string>
+    <string name="categoria_transporte">Transporte</string>
+    <string name="categoria_verbos">Verbos</string>
+
+    <!-- Anatomía (15) -->
+    <string name="anatomia_cuerpo">Cuerpo</string>
+    <string name="anatomia_hombre">Hombre</string>
+    <string name="anatomia_mujer">Mujer</string>
+    <string name="anatomia_cabeza">Cabeza</string>
+    <string name="anatomia_cabello">Cabello</string>
+    <string name="anatomia_ojos">Ojos</string>
+    <string name="anatomia_nariz">Nariz</string>
+    <string name="anatomia_oreja">Oreja</string>
+    <string name="anatomia_boca">Boca</string>
+    <string name="anatomia_pecho">Pecho</string>
+    <string name="anatomia_brazo">Brazo</string>
+    <string name="anatomia_mano">Mano</string>
+    <string name="anatomia_estomago">Estómago</string>
+    <string name="anatomia_pierna">Pierna</string>
+    <string name="anatomia_pies">Pies</string>
+
+    <!-- Animales (16) -->
+    <string name="animales_animales">Animales</string>
+    <string name="animales_burro">Burro</string>
+    <string name="animales_caballo">Caballo</string>
+    <string name="animales_cerdo">Cerdo</string>
+    <string name="animales_conejo">Conejo</string>
+    <string name="animales_culebra">Culebra</string>
+    <string name="animales_gallina">Gallina</string>
+    <string name="animales_gallo">Gallo</string>
+    <string name="animales_gato">Gato</string>
+    <string name="animales_loro">Loro</string>
+    <string name="animales_pajaro">Pájaro</string>
+    <string name="animales_paloma">Paloma</string>
+    <string name="animales_perro">Perro</string>
+    <string name="animales_pollito">Pollito</string>
+    <string name="animales_toro">Toro</string>
+    <string name="animales_tortuga">Tortuga</string>
+
+    <!-- Colores (14) -->
+    <string name="colores_color">Color</string>
+    <string name="colores_amarillo">Amarillo</string>
+    <string name="colores_azul">Azul</string>
+    <string name="colores_blanco">Blanco</string>
+    <string name="colores_cafe">Café / Marrón</string>
+    <string name="colores_celeste">Celeste</string>
+    <string name="colores_gris">Gris</string>
+    <string name="colores_lila">Lila</string>
+    <string name="colores_morado">Morado</string>
+    <string name="colores_naranja">Naranja</string>
+    <string name="colores_negro">Negro</string>
+    <string name="colores_rojo">Rojo</string>
+    <string name="colores_rosa">Rosa</string>
+    <string name="colores_verde">Verde</string>
+
+    <!-- Comida (18) -->
+    <string name="comida_arroz">Arroz</string>
+    <string name="comida_banano">Banano</string>
+    <string name="comida_cafe">Café</string>
+    <string name="comida_carne">Carne</string>
+    <string name="comida_ensalada">Ensalada</string>
+    <string name="comida_frijoles">Frijoles</string>
+    <string name="comida_gaseosa">Gaseosa</string>
+    <string name="comida_hamburguesa">Hamburguesa</string>
+    <string name="comida_helado">Helado</string>
+    <string name="comida_huevo">Huevo</string>
+    <string name="comida_leche">Leche</string>
+    <string name="comida_manzana">Manzana</string>
+    <string name="comida_papasfritas">Papas fritas</string>
+    <string name="comida_pizza">Pizza</string>
+    <string name="comida_queso">Queso</string>
+    <string name="comida_salsadetomate">Salsa de tomate</string>
+    <string name="comida_sandia">Sandía</string>
+    <string name="comida_sopa">Sopa</string>
+
+    <!-- Direcciones (8) -->
+    <string name="direcciones_arriba">Arriba</string>
+    <string name="direcciones_abajo">Abajo</string>
+    <string name="direcciones_izquierda">Izquierda</string>
+    <string name="direcciones_derecha">Derecha</string>
+    <string name="direcciones_norte">Norte</string>
+    <string name="direcciones_sur">Sur</string>
+    <string name="direcciones_este">Este</string>
+    <string name="direcciones_oeste">Oeste</string>
+
+    <!-- Emergencias (9) -->
+    <string name="emergencias_ayudame">Ayúdame</string>
+    <string name="emergencias_ambulancia">Ambulancia</string>
+    <string name="emergencias_dolor">Dolor</string>
+    <string name="emergencias_dolordecabeza">Dolor de cabeza</string>
+    <string name="emergencias_hospital">Hospital</string>
+    <string name="emergencias_temblor">Temblor</string>
+    <string name="emergencias_terremoto">Terremoto</string>
+    <string name="emergencias_sangre">Sangre</string>
+    <string name="emergencias_vomito">Vómito</string>
+
+    <!-- Familia (11) -->
+    <string name="familia_amigo">Amigo/a</string>
+    <string name="familia_cuñado">Cuñado/a</string>
+    <string name="familia_esposo">Esposo/a</string>
+    <string name="familia_hermano">Hermano/a</string>
+    <string name="familia_mama">Mamá</string>
+    <string name="familia_novio">Novio/a</string>
+    <string name="familia_papa">Papá</string>
+    <string name="familia_primo">Primo</string>
+    <string name="familia_prima">Prima</string>
+    <string name="familia_sobrino">Sobrino/a</string>
+    <string name="familia_tio">Tío/a</string>
+
+    <!-- Geografía (11) -->
+    <string name="geografia_belice">Belice</string>
+    <string name="geografia_centroamerica">Centroamérica</string>
+    <string name="geografia_costarica">Costa Rica</string>
+    <string name="geografia_cuba">Cuba</string>
+    <string name="geografia_elsalvador">El Salvador</string>
+    <string name="geografia_eeuu">Estados Unidos</string>
+    <string name="geografia_guatemala">Guatemala</string>
+    <string name="geografia_honduras">Honduras</string>
+    <string name="geografia_nicaragua">Nicaragua</string>
+    <string name="geografia_panama">Panamá</string>
+    <string name="geografia_repdom">República Dominicana</string>
+
+    <!-- Números -->
+    <string name="num_0">Cero</string>
+    <string name="num_1">Uno</string>
+    <string name="num_2">Dos</string>
+    <string name="num_3">Tres</string>
+    <string name="num_4">Cuatro</string>
+    <string name="num_5">Cinco</string>
+    <string name="num_6">Seis</string>
+    <string name="num_7">Siete</string>
+    <string name="num_8">Ocho</string>
+    <string name="num_9">Nueve</string>
+    <string name="num_10">Diez</string>
+    <string name="num_11">Once</string>
+    <string name="num_12">Doce</string>
+    <string name="num_13">Trece</string>
+    <string name="num_14">Catorce</string>
+    <string name="num_15">Quince</string>
+    <string name="num_16">Dieciséis</string>
+    <string name="num_17">Diecisiete</string>
+    <string name="num_18">Dieciocho</string>
+    <string name="num_19">Diecinueve</string>
+    <string name="num_20">Veinte</string>
+    <string name="num_30">Treinta</string>
+    <string name="num_40">Cuarenta</string>
+    <string name="num_50">Cincuenta</string>
+    <string name="num_60">Sesenta</string>
+    <string name="num_70">Setenta</string>
+    <string name="num_80">Ochenta</string>
+    <string name="num_90">Noventa</string>
+    <string name="num_100">Cien</string>
+    <string name="num_200">Doscientos</string>
+    <string name="num_300">Trescientos</string>
+    <string name="num_400">Cuatrocientos</string>
+    <string name="num_500">Quinientos</string>
+    <string name="num_1000">Mil</string>
+    <string name="num_1000000">Millón</string>
+
+    <!-- Ropa (15) -->
+    <string name="ropa_blusa">Blusa</string>
+    <string name="ropa_calcetines">Calcetines</string>
+    <string name="ropa_camisa">Camisa</string>
+    <string name="ropa_calzon">Calzón</string>
+    <string name="ropa_calzoncillo">Calzoncillo</string>
+    <string name="ropa_falda">Falda</string>
+    <string name="ropa_gorra">Gorra</string>
+    <string name="ropa_pantalon">Pantalón</string>
+    <string name="ropa_shorts">Shorts</string>
+    <string name="ropa_sombrero">Sombrero</string>
+    <string name="ropa_tacones">Tacones</string>
+    <string name="ropa_tenis">Tenis</string>
+    <string name="ropa_trajedebaño">Traje de baño</string>
+    <string name="ropa_vestido">Vestido</string>
+    <string name="ropa_zapatos">Zapatos</string>
+
+    <!-- Saludos (12) -->
+    <string name="saludos_hola">Hola</string>
+    <string name="saludos_soysordo">Soy sordo/a</string>
+    <string name="saludos_soyhipoacusico">Soy hipoacúsico/a</string>
+    <string name="saludos_bienvenidos">Bienvenidos</string>
+    <string name="saludos_buenosdias">Buenos días</string>
+    <string name="saludos_buenastardes">Buenas tardes</string>
+    <string name="saludos_buenasnoches">Buenas noches</string>
+    <string name="saludos_comoestas">¿Cómo estás?</string>
+    <string name="saludos_bien">Bien</string>
+    <string name="saludos_mal">Mal</string>
+    <string name="saludos_gracias">Gracias</string>
+    <string name="saludos_adios">Adiós</string>
+
+    <!-- Tiempo (11) -->
+    <string name="tiempo_hoy">Hoy</string>
+    <string name="tiempo_mañana">Mañana</string>
+    <string name="tiempo_ayer">Ayer</string>
+    <string name="tiempo_segundo">Segundo</string>
+    <string name="tiempo_minuto">Minuto</string>
+    <string name="tiempo_hora">Hora</string>
+    <string name="tiempo_dia">Día</string>
+    <string name="tiempo_semana">Semana</string>
+    <string name="tiempo_mes">Mes</string>
+    <string name="tiempo_año">Año</string>
+    <string name="tiempo_quehoraes">¿Qué hora es?</string>
+
+    <!-- Trabajos (13) -->
+    <string name="trabajos_abogado">Abogado/a</string>
+    <string name="trabajos_chofer">Chofer</string>
+    <string name="trabajos_dentista">Dentista</string>
+    <string name="trabajos_doctor">Doctor(a)</string>
+    <string name="trabajos_enfermera">Enfermero/a</string>
+    <string name="trabajos_general">General</string>
+    <string name="trabajos_jefe">Jefe/a</string>
+    <string name="trabajos_maestro">Maestro/a</string>
+    <string name="trabajos_pastor">Pastor</string>
+    <string name="trabajos_periodista">Periodista</string>
+    <string name="trabajos_policia">Policía</string>
+    <string name="trabajos_profesor">Profesor(a)</string>
+    <string name="trabajos_sacerdote">Sacerdote</string>
+
+    <!-- Transporte (10) -->
+    <string name="transporte_avion">Avión</string>
+    <string name="transporte_bus">Bus</string>
+    <string name="transporte_carretilla">Carretilla</string>
+    <string name="transporte_carro">Carro</string>
+    <string name="transporte_camion">Camión</string>
+    <string name="transporte_helicoptero">Helicóptero</string>
+    <string name="transporte_microbus">Microbús</string>
+    <string name="transporte_moto">Moto</string>
+    <string name="transporte_taxi">Taxi</string>
+    <string name="transporte_tren">Tren</string>
+
+    <!-- Verbos (20) -->
+    <string name="verbos_amar">Amar / Amor</string>
+    <string name="verbos_aprender">Aprender</string>
+    <string name="verbos_bañar">Bañar</string>
+    <string name="verbos_beber">Beber</string>
+    <string name="verbos_caminar">Caminar</string>
+    <string name="verbos_cantar">Cantar</string>
+    <string name="verbos_comer">Comer</string>
+    <string name="verbos_comprar">Comprar</string>
+    <string name="verbos_dormir">Dormir</string>
+    <string name="verbos_enseñar">Enseñar</string>
+    <string name="verbos_escribir">Escribir</string>
+    <string name="verbos_escuchar">Escuchar / Oír</string>
+    <string name="verbos_estudiar">Estudiar</string>
+    <string name="verbos_gritar">Gritar</string>
+    <string name="verbos_hacer">Hacer</string>
+    <string name="verbos_leer">Leer</string>
+    <string name="verbos_llamar">Llamar</string>
+    <string name="verbos_trabajar">Trabajar</string>
+    <string name="verbos_ver">Ver</string>
+    <string name="verbos_vender">Vender</string>
+
+</resources>

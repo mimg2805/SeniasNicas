@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="nicaBlue">#0067c6</color>
+    <color name="nicaDarkBlue">#003363</color>
+
+    <color name="clear">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="whiteish">#cccccc</color>
+    <color name="gray">#7f7f7f</color>
+    <color name="darkGray">#0f0f0f</color>
+    <color name="lightGray">#bfbfbf</color>
+
+    <color name="blue">#0000ff</color>
+    <color name="navy">#000077</color>
+    <color name="royal">#4169e1</color>
+    <color name="slate">#708090</color>
+    <color name="sky">#87ceeb</color>
+    <color name="cyan">#00ffff</color>
+    <color name="teal">#007777</color>
+
+    <color name="green">#00ff00</color>
+    <color name="chartreuse">#7fff00</color>
+    <color name="lime">#32cd32</color>
+    <color name="forest">#228b22</color>
+    <color name="olive">#6b8e23</color>
+    <color name="darkOlive">#354711</color>
+
+    <color name="yellow">#ffff00</color>
+    <color name="gold">#ffd700</color>
+    <color name="goldenrod">#daa520</color>
+    <color name="orange">#ffa500</color>
+
+    <color name="brown">#8b4513</color>
+    <color name="darkBrown">#451606</color>
+    <color name="tan">#d2b48c</color>
+    <color name="darkTan">#695a46</color>
+    <color name="firebrick">#b22222</color>
+
+    <color name="red">#ff0000</color>
+    <color name="scarlet">#ff341c</color>
+    <color name="coral">#ff7f50</color>
+    <color name="salmon">#fa8072</color>
+    <color name="pink">#ff69b4</color>
+    <color name="darkPink">#77345a</color>
+    <color name="magenta">#ff00ff</color>
+    <color name="darkMagenta">#770077</color>
+
+    <color name="purple">#a020f0</color>
+    <color name="darkPurple">#501070</color>
+    <color name="violet">#ee82ee</color>
+    <color name="maroon">#b03060</color>
+</resources>
