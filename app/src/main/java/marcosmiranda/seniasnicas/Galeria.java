@@ -1,6 +1,8 @@
 package marcosmiranda.seniasnicas;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.media.PlaybackParams;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -33,7 +35,20 @@ public class Galeria extends AppCompatActivity {
 
         final VideoView videoView = findViewById(R.id.videoView);
         videoView.setVideoURI(uriVideo);
-        videoView.setMediaController(new MediaController(this, false));
+        final MediaController mediaCont = new MediaController(this, false);
+        videoView.setMediaController(mediaCont);
+
+        if (android.os.Build.VERSION.SDK_INT >= 23) {
+            videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    PlaybackParams pbParams = new PlaybackParams();
+                    pbParams.setSpeed(0.5f);
+                    mp.setPlaybackParams(pbParams);
+                }
+            });
+        }
+
         videoView.start();
     }
 }

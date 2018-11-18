@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/txtViewDictionary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/book" />
@@ -35,14 +36,13 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="440dp"
-        android:layout_marginTop="64dp"
-        android:clipToPadding="false"
-        android:fillViewport="false"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:scrollbarStyle="outsideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/txtViewDictionary">
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -187,7 +187,7 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
+                android:layout_width="372dp"
                 android:layout_height="match_parent">
 
                 <Button

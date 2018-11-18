@@ -3,6 +3,12 @@ Una aplicación para ayudar con la enseñanza y aprendizaje del lenguaje de señ
 Cuenta con un catálogo de las señas más comunes del ISN, en listados separados por letras y categorías de palabras.\
 Aprende a comunicarte con los sordos del país, y cierra la brecha entre personas oyentes y no oyentes.
 
+**Google Play:** \
+https://play.google.com/store/apps/details?id=com.marcosmiranda.seniasnicas
+
+**Facebook:** \
+https://www.facebook.com/seniasnicas/
+
 **Autor:** Marcos Miranda\
 **E-mail:** mimg2805@gmail.com\
 **Sitio web:** <https://mimg2805.github.io>

@@ -1,36 +1,27 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'upload'
-            keyPassword '11C-41Bandroid'
-            storeFile file('C:/Users/Marcos/Proyectos/android-keystore.jks')
-            storePassword '11C-41Bandroid'
-        }
-    }
     compileSdkVersion 28
-    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.marcosmiranda.seniasnicas"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-        //versionName "0.9b-" + getDate()
-        //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode 101
+        versionName "1.0.1"
+        //versionName "1.0-" + getDate()
     }
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     sourceSets {
         main.res.srcDirs += ['src/main/res_buttons',
-                             'src/main/res_images',
+                             'src/main/res_icons',
                              'src/main/res_letters_images',
                              'src/main/res_words_images']
     }
@@ -38,9 +29,13 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:design:28.0.0'
+
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1' // SQLite Asset Helper
+    //implementation 'com.devbrackets.android:exomedia:4.2.3' // ExoMedia
 }
 
 static def getDate() {
