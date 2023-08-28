@@ -2,8 +2,10 @@ package marcosmiranda.seniasnicas;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.marcosmiranda.seniasnicas.R;
 
 public class Diccionario extends AppCompatActivity {
     public static final String EXTRA_CATEGORY = String.valueOf(R.string.extra_category);

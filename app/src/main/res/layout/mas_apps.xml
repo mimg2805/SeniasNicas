@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/masappsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mas_apps"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/cursoestadisticabasicaLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cursoestadisticabasicaLayout"
+        android:layout_width="351dp"
+        android:layout_height="167dp"
+        android:background="#777"
+        app:layout_constraintBottom_toTopOf="@+id/nicaroadrageLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/masappsTxt">
+
+        <ImageView
+            android:id="@+id/cursoestadisticabasicaImg"
+            android:layout_width="175dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/cursoestadisticabasica_title"
+            android:scaleX="0.75"
+            android:scaleY="0.75"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cursoestadisticabasica" />
+
+        <TextView
+            android:id="@+id/cursoestadisticabasicaTitleTxt"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/cursoestadisticabasica_title"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/cursoestadisticabasicaDescTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cursoestadisticabasicaImg"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/cursoestadisticabasica_title" />
+
+        <TextView
+            android:id="@+id/cursoestadisticabasicaDescTxt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/cursoestadisticabasica_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cursoestadisticabasicaImg"
+            app:layout_constraintTop_toBottomOf="@+id/cursoestadisticabasicaTitleTxt"
+            tools:text="@string/cursoestadisticabasica_desc" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nicaroadrageLayout"
+        android:layout_width="351dp"
+        android:layout_height="167dp"
+        android:background="#777"
+        app:layout_constraintBottom_toTopOf="@+id/purisimaLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cursoestadisticabasicaLayout">
+
+        <ImageView
+            android:id="@+id/nicaroadrageImg"
+            android:layout_width="175dp"
+            android:layout_height="0dp"
+            android:scaleX="0.75"
+            android:scaleY="0.75"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/nicaroadrage" />
+
+        <TextView
+            android:id="@+id/nicaroadrageTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/nicaroadrage_title"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/nicaroadrageDescTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/nicaroadrageImg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nicaroadrageDescTxt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/nicaroadrage_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/nicaroadrageImg"
+            app:layout_constraintTop_toBottomOf="@+id/nicaroadrageTitleTxt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/purisimaLayout"
+        android:layout_width="351dp"
+        android:layout_height="167dp"
+        android:background="#777"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nicaroadrageLayout">
+
+        <ImageView
+            android:id="@+id/purisimaImg"
+            android:layout_width="175dp"
+            android:layout_height="0dp"
+            android:scaleX="0.75"
+            android:scaleY="0.75"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/purisima" />
+
+        <TextView
+            android:id="@+id/purisimaTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/purisima_title"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/purisimaDescTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/purisimaImg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/purisimaDescTxt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/purisima_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/purisimaImg"
+            app:layout_constraintTop_toBottomOf="@+id/purisimaTitleTxt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

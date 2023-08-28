@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="marcosmiranda.seniasnicas">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="LockedOrientationActivity">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 
     <application
-        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:installLocation="preferExternal"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".MainMenu"
+            android:name="marcosmiranda.seniasnicas.MainMenu"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,61 +24,84 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Letras"
+            android:name="marcosmiranda.seniasnicas.Letras"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Diccionario"
+            android:name="marcosmiranda.seniasnicas.Diccionario"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Galeria"
+            android:name="marcosmiranda.seniasnicas.MasApps"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".WordList"
+            android:name="marcosmiranda.seniasnicas.Galeria"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AnatomiaWordList"
+            android:name="marcosmiranda.seniasnicas.WordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AnimalesWordList"
+            android:name="marcosmiranda.seniasnicas.AnatomiaWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ColoresWordList"
+            android:name="marcosmiranda.seniasnicas.AnimalesWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ComidaWordList"
+            android:name="marcosmiranda.seniasnicas.ColoresWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DireccionesWordList"
+            android:name="marcosmiranda.seniasnicas.ComidaWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".EmergenciasWordList"
+            android:name="marcosmiranda.seniasnicas.DireccionesWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FamiliaWordList"
+            android:name="marcosmiranda.seniasnicas.EmergenciasWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".GeografiaWordList"
+            android:name="marcosmiranda.seniasnicas.FamiliaWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".NumerosWordList"
+            android:name="marcosmiranda.seniasnicas.GeografiaWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RopaWordList"
+            android:name="marcosmiranda.seniasnicas.NumerosWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SaludosWordList"
+            android:name="marcosmiranda.seniasnicas.RopaWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TiempoWordList"
+            android:name="marcosmiranda.seniasnicas.SaludosWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TrabajosWordList"
+            android:name="marcosmiranda.seniasnicas.TiempoWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TransporteWordList"
+            android:name="marcosmiranda.seniasnicas.TrabajosWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".VerbosWordList"
+            android:name="marcosmiranda.seniasnicas.TransporteWordList"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="marcosmiranda.seniasnicas.VerbosWordList"
+            android:exported="true"
             android:screenOrientation="portrait" />
     </application>
 

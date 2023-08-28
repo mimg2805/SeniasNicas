@@ -5,11 +5,13 @@ import android.media.MediaPlayer;
 import android.media.PlaybackParams;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.marcosmiranda.seniasnicas.R;
 
 public class Galeria extends AppCompatActivity {
 

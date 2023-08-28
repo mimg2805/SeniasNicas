@@ -1,9 +1,10 @@
 package marcosmiranda.seniasnicas;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.marcosmiranda.seniasnicas.R;
 import static marcosmiranda.seniasnicas.Helper.gallery;
 
 public class VerbosWordList extends AppCompatActivity {
