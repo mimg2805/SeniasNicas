@@ -1,23 +1,24 @@
-package marcosmiranda.seniasnicas;
+package com.marcosmiranda.seniasnicas
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 
-public class Helper {
-    private static final String APP_NAME = "com.marcosmiranda.seniasnicas";
-    private static final String EXTRA_TITLE = APP_NAME + ".TITLE";
-    private static final String EXTRA_IMAGE = APP_NAME + ".IMAGE";
-    private static final String EXTRA_VIDEO = APP_NAME + ".VIDEO";
+object Helper {
+    private const val APP_NAME = "com.marcosmiranda.seniasnicas"
+    private const val EXTRA_TITLE = "$APP_NAME.TITLE"
+    private const val EXTRA_IMAGE = "$APP_NAME.IMAGE"
+    private const val EXTRA_VIDEO = "$APP_NAME.VIDEO"
 
-    public static void gallery(Context context, int title, int idImage, int idVideo) {
-        Intent intent = new Intent(context, Galeria.class);
-        Uri pathImage = Uri.parse("android.resource://" + context.getPackageName() + "/" + idImage);
-        Uri pathVideo = Uri.parse("android.resource://" + context.getPackageName() + "/" + idVideo);
-        intent.putExtra(EXTRA_TITLE, title);
-        intent.putExtra(EXTRA_IMAGE, pathImage);
-        intent.putExtra(EXTRA_VIDEO, pathVideo);
-        context.startActivity(intent);
+    fun gallery(context: Context, title: Int, idImage: Int, idVideo: Int) {
+        val intent = Intent(context, Galeria::class.java)
+        val packageName = context.packageName
+        val pathImage = Uri.parse("android.resource://${packageName}/${idImage}")
+        val pathVideo = Uri.parse("android.resource://${packageName}/${idVideo}")
+        intent.putExtra(EXTRA_TITLE, title)
+        intent.putExtra(EXTRA_IMAGE, pathImage)
+        intent.putExtra(EXTRA_VIDEO, pathVideo)
+        context.startActivity(intent)
     }
 
     /*

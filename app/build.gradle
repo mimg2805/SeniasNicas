@@ -8,13 +8,13 @@ static def getDate() {
 android {
     compileSdk 34
     defaultConfig {
-        applicationId "com.marcosmiranda.seniasnicas"
+        applicationId 'com.marcosmiranda.seniasnicas'
         minSdkVersion 23
         targetSdkVersion 34
 
         versionCode getDate()
-        versionName "1.0.2"
-        // versionName "1.0.2-" + getDate()
+        // versionName "1.0.2"
+        versionName "1.0.2-" + getDate()
     }
     buildTypes {
         release {
@@ -24,10 +24,16 @@ android {
         }
     }
     sourceSets {
-        main.res.srcDirs += ['src/main/res_buttons',
-                             'src/main/res_icons',
-                             'src/main/res_letters_images',
-                             'src/main/res_words_images']
+        main.res.srcDirs += [
+            'src/main/res_buttons',
+            'src/main/res_icons',
+            'src/main/res_letters_images',
+            'src/main/res_words_images'
+        ]
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     namespace 'com.marcosmiranda.seniasnicas'
 }
@@ -36,7 +42,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1' // SQLite Asset Helper
