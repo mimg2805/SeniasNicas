@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.google.devtools.ksp'
 
 static def getDate() {
     return new Date().format('yyyyMMdd').toInteger()
@@ -45,6 +46,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.11.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1' // SQLite Asset Helper
-    // implementation 'com.devbrackets.android:exomedia:4.2.3' // ExoMedia
+    // Room
+    def room_version = '2.6.1'
+    implementation "androidx.room:room-runtime:$room_version"
+    ksp "androidx.room:room-compiler:$room_version"
 }
