@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name" translatable="false">Señas Nicas</string>
-    <string name="abc">Abecedario</string>
-    <string name="dic">Diccionario</string>
+    <string name="abecedario">Abecedario</string>
+    <string name="diccionario">Diccionario</string>
+    <string name="historia">Historia</string>
     <string name="exit">Salir</string>
+
+    <string name="galeria_imagen">Imagen</string>
+    <string name="galeria_video">Video</string>
 
     <!-- Más Apps -->
     <string name="mas_apps" translatable="false">Más Apps</string>
@@ -12,14 +16,6 @@
     <string name="nicaroadrage_desc" translatable="false">Un pequeño juego infinito de carreras para Android.</string>
     <string name="purisima_title" translatable="false">Purísima</string>
     <string name="purisima_desc" translatable="false">Un juego móvil casual basado en las festividades nicaragüenses de La Purísima.</string>
-
-    <!-- Variables -->
-    <integer name="shadowRadius">3</integer>
-    <string name="extra_app_string">com.marcosmiranda.seniasnicas</string>
-    <string name="extra_title">com.marcosmiranda.seniasnicas.TITLE</string>
-    <string name="extra_category">com.marcosmiranda.seniasnicas.CATEGORY</string>
-    <string name="extra_image">com.marcosmiranda.seniasnicas.IMAGE</string>
-    <string name="extra_video">com.marcosmiranda.seniasnicas.VIDEO</string>
 
     <!-- Letras -->
     <string name="a">A</string>

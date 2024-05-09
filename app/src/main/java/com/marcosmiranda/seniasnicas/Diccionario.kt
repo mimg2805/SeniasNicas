@@ -2,123 +2,187 @@ package com.marcosmiranda.seniasnicas
 
 import android.app.Activity
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.content.res.Resources.Theme
+import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
+import android.view.Gravity
 import android.view.View
+import android.widget.Button
+import android.widget.TableLayout
+import android.widget.TableRow
+import androidx.core.view.marginBottom
+import androidx.room.Room
 
 class Diccionario : Activity() {
-    //public static String category;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diccionario)
-    }
 
-    fun anatomia(view: View?) {
-        val intent = Intent(this, AnatomiaWordList::class.java)
-        //category = String.valueOf(R.string.categoria_anatomia).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
+        val tlCategorias = findViewById<TableLayout>(R.id.activity_diccionario_tl_categorias)
 
-    fun animales(view: View?) {
-        val intent = Intent(this, AnimalesWordList::class.java)
-        //category = String.valueOf(R.string.categoria_animales).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
+        val btnLayoutParams = TableRow.LayoutParams(
+            450,
+            TableRow.LayoutParams.WRAP_CONTENT
+        )
+        btnLayoutParams.setMargins(32, 32, 32, 32)
+        val trLayoutParams = TableRow.LayoutParams()
+        trLayoutParams.setMargins(0, 32, 0, 32)
 
-    fun colores(view: View?) {
-        val intent = Intent(this, ColoresWordList::class.java)
-        //category = String.valueOf(R.string.categoria_colores).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
+        val db = Room.databaseBuilder(applicationContext, Database::class.java, "SeniasNicas")
+            .createFromAsset("databases/SeniasNicas.db")
+            .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
+            .build()
 
-    fun comida(view: View?) {
-        val intent = Intent(this, ComidaWordList::class.java)
-        //category = String.valueOf(R.string.categoria_comida).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
+        val categoriaDao = db.categoriaDao()
+        val categorias = categoriaDao.getAll()
+        // Log.e("categorias", categorias.toString())
 
-    fun direcciones(view: View?) {
-        val intent = Intent(this, DireccionesWordList::class.java)
-        //category = String.valueOf(R.string.categoria_direcciones).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
+        val categoriasPerRow = 2
+        var c = 0
+        var row = TableRow(applicationContext)
+        categorias.forEach { ctg ->
+            // Log.e("categoria", ctg.toString())
+            val ctgId = ctg.id
+            val ctgNombre = ctg.nombre
 
-    fun emergencias(view: View?) {
-        val intent = Intent(this, EmergenciasWordList::class.java)
-        //category = String.valueOf(R.string.categoria_emergencias).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
+            val ctgHasPalabras = db.palabraDao().getByCategoria(ctgId).isNotEmpty()
+            if (!ctgHasPalabras) return@forEach
 
-    fun familia(view: View?) {
-        val intent = Intent(this, FamiliaWordList::class.java)
-        //category = String.valueOf(R.string.categoria_familia).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
+            val btnIconId: Int
+            val btnColorId: Int
+            when (ctgId) {
+                1 -> {
+                    // Anatomía
+                    btnIconId = R.drawable.male_icon
+                    btnColorId = R.drawable.tan_button
+                }
+                2 -> {
+                    // Animales
+                    btnIconId = R.drawable.animal_prints_icon
+                    btnColorId = R.drawable.brown_button
+                }
+                3 -> {
+                    // Colores
+                    btnIconId = R.drawable.palette_icon
+                    btnColorId = R.drawable.rgb_button
+                }
+                4 -> {
+                    // Comida
+                    btnIconId = R.drawable.utensils_icon
+                    btnColorId = R.drawable.olive_button
+                }
+                // 5 -> {
+                //     // Cristianismo
+                //     btnIconId = R.drawable.cross_icon
+                //     btnColorId = R.drawable.white_button
+                // }
+                6 -> {
+                    // Deportes
+                    btnIconId = R.drawable.sign_language_icon
+                    btnColorId = R.drawable.tan_button
+                }
+                7 -> {
+                    // Direcciones
+                    btnIconId = R.drawable.compass_icon
+                    btnColorId = R.drawable.white_button
+                }
+                8 -> {
+                    // Emergencias
+                    btnIconId = R.drawable.med_cross_icon
+                    btnColorId = R.drawable.red_button
+                }
+                9 -> {
+                    // Familia
+                    btnIconId = R.drawable.users_icon
+                    btnColorId = R.drawable.pink_button
+                }
+                10 -> {
+                    // Geografía
+                    btnIconId = R.drawable.earth_icon
+                    btnColorId = R.drawable.green_button
+                }
+                // 11 -> {
+                //     // Herramientas
+                //     btnIconId = R.drawable.sign_language_icon
+                //     btnColorId = R.drawable.tan_button
+                // }
+                // 12 -> {
+                //     // Lugares
+                //     btnIconId = R.drawable.sign_language_icon
+                //     btnColorId = R.drawable.tan_button
+                // }
+                13 -> {
+                    // Números
+                    btnIconId = R.drawable.numbers_icon
+                    btnColorId = R.drawable.purple_button
+                }
+                14 -> {
+                    // Ropa
+                    btnIconId = R.drawable.shirt_icon
+                    btnColorId = R.drawable.magenta_button
+                }
+                15 -> {
+                    // Saludos
+                    btnIconId = R.drawable.handshake_icon
+                    btnColorId = R.drawable.white_button
+                }
+                16 -> {
+                    // Tiempo
+                    btnIconId = R.drawable.clock_icon
+                    btnColorId = R.drawable.cyan_teal_button
+                }
+                17 -> {
+                    // Trabajos
+                    btnIconId = R.drawable.graduation_cap_icon
+                    btnColorId = R.drawable.blue_navy_button
+                }
+                18 -> {
+                    // Transporte
+                    btnIconId = R.drawable.car_icon
+                    btnColorId = R.drawable.gray_button
+                }
+                19 -> {
+                    // Verbos
+                    btnIconId = R.drawable.bed_icon
+                    btnColorId = R.drawable.tan_button
+                }
+                else -> {
+                    btnIconId = 0
+                    btnColorId = 0
+                }
+            }
 
-    fun geografia(view: View?) {
-        val intent = Intent(this, GeografiaWordList::class.java)
-        //category = String.valueOf(R.string.categoria_geografia).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
+            val btn = Button(applicationContext)
+            btn.text = ctgNombre
+            // btn.textSize = R.dimen.btn_text_size.toFloat()
+            btn.setTextColor(Color.WHITE)
+            btn.setShadowLayer(5f, 0f, 0f, Color.BLACK)
+            btn.layoutParams = btnLayoutParams
+            btn.setCompoundDrawablesWithIntrinsicBounds(btnIconId, 0, 0, 0)
+            btn.setBackgroundResource(btnColorId)
+            btn.gravity = Gravity.CENTER
+            // btn.setPadding(8, 0, 8, 0)
+            btn.setOnClickListener {
+                val intent = Intent(this, CategoriaPalabras::class.java)
+                intent.putExtra("categoria", ctgId)
+                intent.putExtra("icon", btnIconId)
+                startActivity(intent)
+            }
+            row.addView(btn)
+            c++
 
-    fun numeros(view: View?) {
-        val intent = Intent(this, NumerosWordList::class.java)
-        //category = String.valueOf(R.string.categoria_numeros).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
-
-    fun ropa(view: View?) {
-        val intent = Intent(this, RopaWordList::class.java)
-        //category = String.valueOf(R.string.categoria_ropa).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
-
-    fun saludos(view: View?) {
-        val intent = Intent(this, SaludosWordList::class.java)
-        //category = String.valueOf(R.string.categoria_saludos).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
-
-    fun tiempo(view: View?) {
-        val intent = Intent(this, TiempoWordList::class.java)
-        //category = String.valueOf(R.string.categoria_tiempo).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
-
-    fun trabajos(view: View?) {
-        val intent = Intent(this, TrabajosWordList::class.java)
-        //category = String.valueOf(R.string.categoria_trabajos).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
-
-    fun transporte(view: View?) {
-        val intent = Intent(this, TransporteWordList::class.java)
-        //category = String.valueOf(R.string.categoria_transporte).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
-
-    fun verbos(view: View?) {
-        val intent = Intent(this, VerbosWordList::class.java)
-        //category = String.valueOf(R.string.categoria_verbos).toUpperCase();
-        //intent.putExtra(EXTRA_CATEGORY, category);
-        startActivity(intent)
-    }
-
-    companion object {
-        @JvmField
-        val EXTRA_CATEGORY = R.string.extra_category.toString()
+            if (c == categoriasPerRow || ctg == categorias.last()) {
+                row.gravity = Gravity.CENTER
+                // row.layoutParams = trLayoutParams
+                tlCategorias.addView(row)
+                row = TableRow(applicationContext)
+                c = 0
+            }
+        }
     }
 }

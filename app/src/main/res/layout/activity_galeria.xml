@@ -7,43 +7,62 @@
     android:background="@color/nicaDarkBlue">
 
     <TextView
-        android:id="@+id/txtViewWord"
+        android:id="@+id/activity_galeria_tv_galeria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Prueba" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/activity_galeria_iv_galeria"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="400dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/videoView"
+        android:layout_marginBottom="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/activity_galeria_sw_galeria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewWord"
-        app:srcCompat="@color/nicaDarkBlue" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria"
+        app:srcCompat="@color/nicaDarkBlue"
+        tools:visibility="invisible" />
 
     <VideoView
-        android:id="@+id/videoView"
+        android:id="@+id/activity_galeria_vv_galeria"
         android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_height="400dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_galeria_sw_galeria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria"
+        tools:visibility="visible" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/activity_galeria_sw_galeria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:showText="true"
+        android:text="@string/galeria_video"
+        android:textOff="@string/galeria_imagen"
+        android:textOn="@string/galeria_video"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:switchPadding="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

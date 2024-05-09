@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 class MasApps : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.mas_apps)
+        setContentView(R.layout.activity_mas_apps)
         val cursoestadisticabasicaLayout =
             findViewById<ConstraintLayout>(R.id.cursoestadisticabasicaLayout)
         cursoestadisticabasicaLayout.setOnClickListener { view: View? ->
