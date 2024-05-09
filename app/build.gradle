@@ -24,14 +24,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets {
-        main.res.srcDirs += [
-            'src/main/res_buttons',
-            'src/main/res_icons',
-            'src/main/res_letters_images',
-            'src/main/res_words_images'
-        ]
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
