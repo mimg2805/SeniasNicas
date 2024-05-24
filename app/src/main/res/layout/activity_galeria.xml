@@ -21,24 +21,27 @@
 
     <ImageView
         android:id="@+id/activity_galeria_iv_galeria"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/activity_galeria_sw_galeria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria"
         app:srcCompat="@color/nicaDarkBlue"
-        tools:visibility="invisible" />
+        tools:visibility="visible" />
 
     <VideoView
         android:id="@+id/activity_galeria_vv_galeria"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -47,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria"
-        tools:visibility="visible" />
+        tools:visibility="invisible" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/activity_galeria_sw_galeria"
