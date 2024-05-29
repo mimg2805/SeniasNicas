@@ -100,9 +100,10 @@ class Galeria : Activity() {
         // Handle special cases: special characters and compound letters (ch, ll, rr)
         val wordChars = word.toCharArray()
         val wordArr = mutableListOf<String>()
+        val ignoreChars = listOf('¿', '?', '¡', '!')
         var prevChr = ' '
         wordChars.forEach { chr ->
-            if (chr == '¿' || chr == '?' || chr == '¡' || chr == '!') return@forEach
+            if (ignoreChars.contains(chr)) return@forEach
 
             if ((prevChr == 'c' && chr == 'h') ||
                 (prevChr == 'l' && chr == 'l') ||
