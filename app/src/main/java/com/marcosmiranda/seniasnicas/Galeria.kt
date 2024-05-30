@@ -9,12 +9,12 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
 import android.widget.MediaController
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.core.graphics.drawable.toBitmap
 import androidx.room.Room
+import com.github.chrisbanes.photoview.PhotoView
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 class Galeria : Activity() {
@@ -30,7 +30,7 @@ class Galeria : Activity() {
         var imgBitmap: Bitmap? = null
 
         val tvGaleria = findViewById<TextView>(R.id.activity_galeria_tv_galeria)
-        val ivGaleria = findViewById<ImageView>(R.id.activity_galeria_iv_galeria)
+        val pvGaleria = findViewById<PhotoView>(R.id.activity_galeria_pv_galeria)
         val vvGaleria = findViewById<VideoView>(R.id.activity_galeria_vv_galeria)
         val swGaleria = findViewById<SwitchMaterial>(R.id.activity_galeria_sw_galeria)
 
@@ -68,17 +68,22 @@ class Galeria : Activity() {
         }
 
         tvGaleria.text = tvGaleriaText
-        ivGaleria.setImageBitmap(imgBitmap)
-        vvGaleria.setVideoURI(Uri.parse("android.resource://$packageName/" + resources.getIdentifier(resName, "raw", packageName)))
+
+        // Load image
+        pvGaleria.setImageBitmap(imgBitmap)
+
+        // Load video
+        val videoUri = Uri.parse("android.resource://$packageName/" + resources.getIdentifier(resName, "raw", packageName))
+        vvGaleria.setVideoURI(videoUri)
 
         swGaleria.setOnCheckedChangeListener { _, checked ->
             if (!checked) { // Video
-                ivGaleria.visibility = View.INVISIBLE
+                pvGaleria.visibility = View.INVISIBLE
                 vvGaleria.visibility = View.VISIBLE
                 vvGaleria.start()
                 swGaleria.text = getString(R.string.galeria_video)
             } else { // Imagen
-                ivGaleria.visibility = View.VISIBLE
+                pvGaleria.visibility = View.VISIBLE
                 vvGaleria.visibility = View.INVISIBLE
                 vvGaleria.stopPlayback()
                 swGaleria.text = getString(R.string.galeria_imagen)

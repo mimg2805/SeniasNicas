@@ -19,8 +19,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Prueba" />
 
-    <ImageView
-        android:id="@+id/activity_galeria_iv_galeria"
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/activity_galeria_pv_galeria"
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_marginStart="16dp"
