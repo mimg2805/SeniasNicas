@@ -12,10 +12,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.room.Room
 import com.github.chrisbanes.photoview.PhotoView
-import com.google.android.material.switchmaterial.SwitchMaterial
 
 class Galeria : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +34,7 @@ class Galeria : Activity() {
         val vvGaleriaVideo = findViewById<VideoView>(R.id.activity_galeria_vv_galeria_video)
         val btnVideoRestart = findViewById<Button>(R.id.activity_galeria_btn_video_restart)
         val btnVideoPausePlay = findViewById<Button>(R.id.activity_galeria_btn_video_pause_play)
-        val swGaleria = findViewById<SwitchMaterial>(R.id.activity_galeria_sw_galeria)
+        val swGaleria = findViewById<SwitchCompat>(R.id.activity_galeria_sw_galeria)
 
         // Set playback speed to half
         vvGaleriaVideo.setOnPreparedListener { mp ->
