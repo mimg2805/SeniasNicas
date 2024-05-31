@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.VideoView
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.graphics.drawable.toBitmap
 import androidx.room.Room
 import com.github.chrisbanes.photoview.PhotoView
@@ -45,15 +46,15 @@ class Galeria : Activity() {
         // Custom media controls
         btnVideoRestart.setOnClickListener {
             vvGaleriaVideo.resume()
-            btnVideoPausePlay.background = resources.getDrawable(android.R.drawable.ic_media_pause)
+            btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_pause)
         }
         btnVideoPausePlay.setOnClickListener {
             if (vvGaleriaVideo.isPlaying) {
                 vvGaleriaVideo.pause()
-                btnVideoPausePlay.background = resources.getDrawable(android.R.drawable.ic_media_play)
+                btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_play)
             } else {
                 vvGaleriaVideo.start()
-                btnVideoPausePlay.background = resources.getDrawable(android.R.drawable.ic_media_pause)
+                btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_pause)
             }
         }
 
@@ -69,7 +70,8 @@ class Galeria : Activity() {
 
             tvGaleriaText = letraTxt
             resName = "letras_${letraTxtLower}"
-            imgBitmap = resources.getDrawable(resources.getIdentifier(resName, "drawable", packageName)).toBitmap()
+            val resId = resources.getIdentifier(resName, "drawable", packageName)
+            imgBitmap = AppCompatResources.getDrawable(this, resId)!!.toBitmap()
         } else if (palabraId != 0) {
             val palabra = db.palabraDao().get(palabraId)
             val palabraTxt = palabra.texto
@@ -98,7 +100,7 @@ class Galeria : Activity() {
                 vvGaleriaVideo.start()
                 btnVideoRestart.visibility = View.VISIBLE
                 btnVideoPausePlay.visibility = View.VISIBLE
-                btnVideoPausePlay.background = resources.getDrawable(android.R.drawable.ic_media_pause)
+                btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_pause)
                 swGaleria.text = getString(R.string.galeria_video)
             } else { // Imagen
                 pvGaleriaImage.visibility = View.VISIBLE
@@ -162,7 +164,7 @@ class Galeria : Activity() {
                 }
 
                 val imgDrawableId = resources.getIdentifier(drawableName, "drawable", packageName)
-                imgBitmap = resources.getDrawable(imgDrawableId).toBitmap()
+                imgBitmap = AppCompatResources.getDrawable(this, imgDrawableId)!!.toBitmap()
             }
             letterBitmapsList.add(imgBitmap)
             wordBitmapWidth += imgBitmap.width + wordBitmapWidthMargin
