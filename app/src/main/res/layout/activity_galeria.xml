@@ -7,7 +7,7 @@
     android:background="@color/nicaDarkBlue">
 
     <TextView
-        android:id="@+id/activity_galeria_tv_galeria"
+        android:id="@+id/activity_galeria_tv_galeria_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -20,7 +20,7 @@
         tools:text="Prueba" />
 
     <com.github.chrisbanes.photoview.PhotoView
-        android:id="@+id/activity_galeria_pv_galeria"
+        android:id="@+id/activity_galeria_pv_galeria_image"
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_marginStart="16dp"
@@ -34,12 +34,12 @@
         app:layout_constraintBottom_toTopOf="@+id/activity_galeria_sw_galeria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria"
+        app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria_title"
         app:srcCompat="@color/nicaDarkBlue"
         tools:visibility="visible" />
 
     <VideoView
-        android:id="@+id/activity_galeria_vv_galeria"
+        android:id="@+id/activity_galeria_vv_galeria_video"
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_marginStart="16dp"
@@ -49,7 +49,7 @@
         app:layout_constraintBottom_toTopOf="@+id/activity_galeria_sw_galeria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria"
+        app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria_title"
         tools:visibility="invisible" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -67,5 +67,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:switchPadding="16dp" />
+
+    <Button
+        android:id="@+id/activity_galeria_btn_video_restart"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/ic_media_rew"
+        app:layout_constraintEnd_toStartOf="@+id/activity_galeria_btn_video_pause_play"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_galeria_vv_galeria_video" />
+
+    <Button
+        android:id="@+id/activity_galeria_btn_video_pause_play"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
+        android:background="@android:drawable/ic_media_pause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_galeria_btn_video_restart"
+        app:layout_constraintTop_toBottomOf="@+id/activity_galeria_vv_galeria_video" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

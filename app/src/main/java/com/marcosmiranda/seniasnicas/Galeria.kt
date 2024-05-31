@@ -7,9 +7,8 @@ import android.graphics.Rect
 import android.media.PlaybackParams
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.MediaController
+import android.widget.Button
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.core.graphics.drawable.toBitmap
@@ -29,17 +28,33 @@ class Galeria : Activity() {
         var resName = ""
         var imgBitmap: Bitmap? = null
 
-        val tvGaleria = findViewById<TextView>(R.id.activity_galeria_tv_galeria)
-        val pvGaleria = findViewById<PhotoView>(R.id.activity_galeria_pv_galeria)
-        val vvGaleria = findViewById<VideoView>(R.id.activity_galeria_vv_galeria)
+        val tvGaleriaTitle = findViewById<TextView>(R.id.activity_galeria_tv_galeria_title)
+        val pvGaleriaImage = findViewById<PhotoView>(R.id.activity_galeria_pv_galeria_image)
+        val vvGaleriaVideo = findViewById<VideoView>(R.id.activity_galeria_vv_galeria_video)
+        val btnVideoRestart = findViewById<Button>(R.id.activity_galeria_btn_video_restart)
+        val btnVideoPausePlay = findViewById<Button>(R.id.activity_galeria_btn_video_pause_play)
         val swGaleria = findViewById<SwitchMaterial>(R.id.activity_galeria_sw_galeria)
 
-        val mc = MediaController(this, false)
-        vvGaleria.setMediaController(mc)
-        vvGaleria.setOnPreparedListener { mp ->
+        // Set playback speed to half
+        vvGaleriaVideo.setOnPreparedListener { mp ->
             val pbParams = PlaybackParams()
             pbParams.setSpeed(0.5f)
             mp.playbackParams = pbParams
+        }
+
+        // Custom media controls
+        btnVideoRestart.setOnClickListener {
+            vvGaleriaVideo.resume()
+            btnVideoPausePlay.background = resources.getDrawable(android.R.drawable.ic_media_pause)
+        }
+        btnVideoPausePlay.setOnClickListener {
+            if (vvGaleriaVideo.isPlaying) {
+                vvGaleriaVideo.pause()
+                btnVideoPausePlay.background = resources.getDrawable(android.R.drawable.ic_media_play)
+            } else {
+                vvGaleriaVideo.start()
+                btnVideoPausePlay.background = resources.getDrawable(android.R.drawable.ic_media_pause)
+            }
         }
 
         val db = Room.databaseBuilder(applicationContext, Database::class.java, "SeniasNicas")
@@ -67,25 +82,30 @@ class Galeria : Activity() {
             imgBitmap = createWordImage(palabraTxtLower)
         }
 
-        tvGaleria.text = tvGaleriaText
+        tvGaleriaTitle.text = tvGaleriaText
 
         // Load image
-        pvGaleria.setImageBitmap(imgBitmap)
+        pvGaleriaImage.setImageBitmap(imgBitmap)
 
         // Load video
         val videoUri = Uri.parse("android.resource://$packageName/" + resources.getIdentifier(resName, "raw", packageName))
-        vvGaleria.setVideoURI(videoUri)
+        vvGaleriaVideo.setVideoURI(videoUri)
 
         swGaleria.setOnCheckedChangeListener { _, checked ->
             if (!checked) { // Video
-                pvGaleria.visibility = View.INVISIBLE
-                vvGaleria.visibility = View.VISIBLE
-                vvGaleria.start()
+                pvGaleriaImage.visibility = View.INVISIBLE
+                vvGaleriaVideo.visibility = View.VISIBLE
+                vvGaleriaVideo.start()
+                btnVideoRestart.visibility = View.VISIBLE
+                btnVideoPausePlay.visibility = View.VISIBLE
+                btnVideoPausePlay.background = resources.getDrawable(android.R.drawable.ic_media_pause)
                 swGaleria.text = getString(R.string.galeria_video)
             } else { // Imagen
-                pvGaleria.visibility = View.VISIBLE
-                vvGaleria.visibility = View.INVISIBLE
-                vvGaleria.stopPlayback()
+                pvGaleriaImage.visibility = View.VISIBLE
+                vvGaleriaVideo.visibility = View.INVISIBLE
+                vvGaleriaVideo.stopPlayback()
+                btnVideoRestart.visibility = View.INVISIBLE
+                btnVideoPausePlay.visibility = View.INVISIBLE
                 swGaleria.text = getString(R.string.galeria_imagen)
             }
         }
