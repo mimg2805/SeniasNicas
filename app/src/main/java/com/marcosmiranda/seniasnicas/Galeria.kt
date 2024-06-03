@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import android.widget.VideoView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.SwitchCompat
@@ -18,6 +19,15 @@ import androidx.room.Room
 import com.github.chrisbanes.photoview.PhotoView
 
 class Galeria : Activity() {
+
+    private lateinit var tvGaleriaTitle : TextView
+    private lateinit var pvGaleriaImage : PhotoView
+    private lateinit var vvGaleriaVideo : VideoView
+    private lateinit var btnVideoRestart : Button
+    private lateinit var btnVideoPausePlay : Button
+    private lateinit var swGaleria : SwitchCompat
+    private lateinit var tstNoVideo : Toast
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_galeria)
@@ -25,16 +35,18 @@ class Galeria : Activity() {
         val letraId = intent.getIntExtra("letra", 0)
         val palabraId = intent.getIntExtra("palabra", 0)
 
+        tvGaleriaTitle = findViewById(R.id.activity_galeria_tv_galeria_title)
+        pvGaleriaImage = findViewById(R.id.activity_galeria_pv_galeria_image)
+        vvGaleriaVideo = findViewById(R.id.activity_galeria_vv_galeria_video)
+        btnVideoRestart = findViewById(R.id.activity_galeria_btn_video_restart)
+        btnVideoPausePlay = findViewById(R.id.activity_galeria_btn_video_pause_play)
+        swGaleria = findViewById(R.id.activity_galeria_sw_galeria)
+        tstNoVideo = Toast.makeText(this, R.string.galeria_no_video, Toast.LENGTH_LONG)
+
         var tvGaleriaText = ""
+        var resId: Int
         var resName = ""
         var imgBitmap: Bitmap? = null
-
-        val tvGaleriaTitle = findViewById<TextView>(R.id.activity_galeria_tv_galeria_title)
-        val pvGaleriaImage = findViewById<PhotoView>(R.id.activity_galeria_pv_galeria_image)
-        val vvGaleriaVideo = findViewById<VideoView>(R.id.activity_galeria_vv_galeria_video)
-        val btnVideoRestart = findViewById<Button>(R.id.activity_galeria_btn_video_restart)
-        val btnVideoPausePlay = findViewById<Button>(R.id.activity_galeria_btn_video_pause_play)
-        val swGaleria = findViewById<SwitchCompat>(R.id.activity_galeria_sw_galeria)
 
         // Set playback speed to half
         vvGaleriaVideo.setOnPreparedListener { mp ->
@@ -70,7 +82,7 @@ class Galeria : Activity() {
 
             tvGaleriaText = letraTxt
             resName = "letras_${letraTxtLower}"
-            val resId = resources.getIdentifier(resName, "drawable", packageName)
+            resId = resources.getIdentifier(resName, "drawable", packageName)
             imgBitmap = AppCompatResources.getDrawable(this, resId)!!.toBitmap()
         } else if (palabraId != 0) {
             val palabra = db.palabraDao().get(palabraId)
@@ -90,19 +102,33 @@ class Galeria : Activity() {
         pvGaleriaImage.setImageBitmap(imgBitmap)
 
         // Load video
-        val videoUri = Uri.parse("android.resource://$packageName/" + resources.getIdentifier(resName, "raw", packageName))
-        vvGaleriaVideo.setVideoURI(videoUri)
+        resId = resources.getIdentifier(resName, "raw", packageName)
+        val videoUri = Uri.parse("android.resource://$packageName/$resId")
+        val videoFileExists = resId != 0
+        if (videoFileExists) {
+            vvGaleriaVideo.setVideoURI(videoUri)
+            swGaleria.visibility = View.VISIBLE
+            tstNoVideo.cancel()
+        } else {
+            galleryChange("image")
+            swGaleria.visibility = View.INVISIBLE
+            tstNoVideo.cancel()
+            tstNoVideo.show()
+        }
 
         swGaleria.setOnCheckedChangeListener { _, checked ->
             if (!checked) { // Video
-                pvGaleriaImage.visibility = View.INVISIBLE
-                vvGaleriaVideo.visibility = View.VISIBLE
-                vvGaleriaVideo.start()
-                btnVideoRestart.visibility = View.VISIBLE
-                btnVideoPausePlay.visibility = View.VISIBLE
-                btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_pause)
-                swGaleria.text = getString(R.string.galeria_video)
+                galleryChange("video")
             } else { // Imagen
+                galleryChange("image")
+            }
+        }
+    }
+
+    private fun galleryChange(mode: String = "")
+    {
+        when (mode) {
+            "image" -> {
                 pvGaleriaImage.visibility = View.VISIBLE
                 vvGaleriaVideo.visibility = View.INVISIBLE
                 vvGaleriaVideo.stopPlayback()
@@ -110,6 +136,16 @@ class Galeria : Activity() {
                 btnVideoPausePlay.visibility = View.INVISIBLE
                 swGaleria.text = getString(R.string.galeria_imagen)
             }
+            "video" -> {
+                pvGaleriaImage.visibility = View.INVISIBLE
+                vvGaleriaVideo.visibility = View.VISIBLE
+                vvGaleriaVideo.start()
+                btnVideoRestart.visibility = View.VISIBLE
+                btnVideoPausePlay.visibility = View.VISIBLE
+                btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_pause)
+                swGaleria.text = getString(R.string.galeria_video)
+            }
+            else -> return
         }
     }
 

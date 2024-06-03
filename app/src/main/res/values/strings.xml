@@ -7,6 +7,7 @@
 
     <string name="galeria_imagen">Imagen</string>
     <string name="galeria_video">Video</string>
+    <string name="galeria_no_video">Video no existe, se mostrará sólo imagen</string>
 
     <!-- Más Apps -->
     <string name="mas_apps" translatable="false">Más Apps</string>
