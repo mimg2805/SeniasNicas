@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/nicaDarkBlue">
+    android:background="@color/nica_dark_blue">
 
     <TextView
         android:id="@+id/activity_galeria_tv_galeria_title"
@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria_title"
-        app:srcCompat="@color/nicaDarkBlue"
+        app:srcCompat="@color/nica_dark_blue"
         tools:visibility="visible" />
 
     <VideoView
