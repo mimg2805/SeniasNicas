@@ -172,7 +172,7 @@ class Galeria : Activity() {
             if ((prevChr == 'c' && chr == 'h') ||
                 (prevChr == 'l' && chr == 'l') ||
                 (prevChr == 'r' && chr == 'r')) {
-                wordArr.removeLast()
+                wordArr.remove("$prevChr")
                 wordArr.add("$prevChr$chr")
             } else {
                 wordArr.add("$chr")
