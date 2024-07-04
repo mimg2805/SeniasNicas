@@ -14,8 +14,8 @@ import android.widget.Toast
 import android.widget.VideoView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.SwitchCompat
-import androidx.core.graphics.drawable.toBitmap
 import androidx.room.Room
+import com.bumptech.glide.Glide
 import com.github.chrisbanes.photoview.PhotoView
 
 class Galeria : Activity() {
@@ -83,7 +83,8 @@ class Galeria : Activity() {
             tvGaleriaText = letraTxt
             resName = "letras_${letraTxtLower}"
             resId = resources.getIdentifier(resName, "drawable", packageName)
-            imgBitmap = AppCompatResources.getDrawable(this, resId)!!.toBitmap()
+            // imgBitmap = AppCompatResources.getDrawable(this, resId)!!.toBitmap()
+            imgBitmap = Glide.with(applicationContext).asBitmap().load(resId).submit().get()
         } else if (palabraId != 0) {
             val palabra = db.palabraDao().get(palabraId)
             val palabraTxt = palabra.texto
@@ -200,7 +201,8 @@ class Galeria : Activity() {
                 }
 
                 val imgDrawableId = resources.getIdentifier(drawableName, "drawable", packageName)
-                imgBitmap = AppCompatResources.getDrawable(this, imgDrawableId)!!.toBitmap()
+                // imgBitmap = AppCompatResources.getDrawable(this, imgDrawableId)!!.toBitmap()
+                imgBitmap = Glide.with(applicationContext).asBitmap().load(imgDrawableId).submit().get()!!
             }
             letterBitmapsList.add(imgBitmap)
             wordBitmapWidth += imgBitmap.width + wordBitmapWidthMargin
