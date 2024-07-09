@@ -38,6 +38,7 @@
         <activity
             android:name="Galeria"
             android:exported="true"
+            android:noHistory="true"
             android:screenOrientation="portrait" />
     </application>
 

@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.Gravity
 import android.widget.Button
 import android.widget.TableLayout
@@ -31,12 +30,11 @@ class Abecedario : Activity() {
         trParams.setMargins(btnMarginX, btnMarginY, btnMarginX, btnMarginY)
 
         val letrasPerRow = 5
-        var l = 0
+        var letraRowIndex = 0
         var row = TableRow(applicationContext)
         letras.forEach { ltr ->
             val ltrId = ltr.id
             val ltrTxt = ltr.texto
-            // Log.e("letra", ltr.toString())
 
             val btn = Button(applicationContext, null, 0, com.google.android.material.R.style.Base_Widget_AppCompat_Button_Small)
             btn.text = ltrTxt
@@ -49,13 +47,13 @@ class Abecedario : Activity() {
                 startActivity(intent)
             }
             row.addView(btn, trParams)
-            l++
+            letraRowIndex++
 
-            if (l == letrasPerRow || ltr == letras.last()) {
+            if (letraRowIndex == letrasPerRow || ltr == letras.last()) {
                 row.gravity = Gravity.CENTER
                 tlLetras.addView(row)
                 row = TableRow(applicationContext)
-                l = 0
+                letraRowIndex = 0
             }
         }
     }

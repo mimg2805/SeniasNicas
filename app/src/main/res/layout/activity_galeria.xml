@@ -21,34 +21,35 @@
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/activity_galeria_pv_galeria_image"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:paddingStart="16dp"
         android:paddingTop="16dp"
         android:paddingEnd="16dp"
         android:paddingBottom="16dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/activity_galeria_sw_galeria"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/activity_galeria_btn_next"
+        app:layout_constraintStart_toEndOf="@+id/activity_galeria_btn_prev"
         app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria_title"
         app:srcCompat="@color/nica_dark_blue"
         tools:visibility="visible" />
 
     <VideoView
         android:id="@+id/activity_galeria_vv_galeria_video"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/activity_galeria_sw_galeria"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/activity_galeria_btn_next"
+        app:layout_constraintStart_toEndOf="@+id/activity_galeria_btn_prev"
         app:layout_constraintTop_toBottomOf="@+id/activity_galeria_tv_galeria_title"
         tools:visibility="invisible" />
 
@@ -91,5 +92,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/activity_galeria_btn_video_restart"
         app:layout_constraintTop_toBottomOf="@+id/activity_galeria_vv_galeria_video" />
+
+    <Button
+        android:id="@+id/activity_galeria_btn_prev"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/arrow_left_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/activity_galeria_pv_galeria_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/activity_galeria_btn_next"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/arrow_right_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_galeria_pv_galeria_image"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

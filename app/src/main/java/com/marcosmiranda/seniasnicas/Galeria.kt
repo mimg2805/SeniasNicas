@@ -1,6 +1,7 @@
 package com.marcosmiranda.seniasnicas
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Rect
@@ -23,6 +24,8 @@ class Galeria : Activity() {
     private lateinit var tvGaleriaTitle : TextView
     private lateinit var pvGaleriaImage : PhotoView
     private lateinit var vvGaleriaVideo : VideoView
+    private lateinit var btnPrev : Button
+    private lateinit var btnNext : Button
     private lateinit var btnVideoRestart : Button
     private lateinit var btnVideoPausePlay : Button
     private lateinit var swGaleria : SwitchCompat
@@ -38,6 +41,8 @@ class Galeria : Activity() {
         tvGaleriaTitle = findViewById(R.id.activity_galeria_tv_galeria_title)
         pvGaleriaImage = findViewById(R.id.activity_galeria_pv_galeria_image)
         vvGaleriaVideo = findViewById(R.id.activity_galeria_vv_galeria_video)
+        btnPrev = findViewById(R.id.activity_galeria_btn_prev)
+        btnNext = findViewById(R.id.activity_galeria_btn_next)
         btnVideoRestart = findViewById(R.id.activity_galeria_btn_video_restart)
         btnVideoPausePlay = findViewById(R.id.activity_galeria_btn_video_pause_play)
         swGaleria = findViewById(R.id.activity_galeria_sw_galeria)
@@ -76,21 +81,38 @@ class Galeria : Activity() {
             .fallbackToDestructiveMigration()
             .build()
 
-        if (letraId != 0) {
-            val letra = db.letraDao().get(letraId)
+        val letra: Letra? = if (letraId != 0) db.letraDao().get(letraId) else null
+        val palabra: Palabra? = if (palabraId != 0) db.palabraDao().get(palabraId) else null
+
+        val categoriaId = palabra?.categoria ?: 0
+        val categoria: Categoria? = if (categoriaId != 0) db.categoriaDao().get(categoriaId) else null
+
+        val letrasList = db.letraDao().getAll()
+        val palabrasList = if (categoriaId != 0) db.palabraDao().getByCategoria(categoriaId) else db.palabraDao().getAll()
+        var prevIndex = 0
+        var nextIndex = 0
+        if (letra != null) {
             val letraTxt = letra.texto
             val letraTxtLower = letraTxt.lowercase()
 
+            val index = letrasList.indexOf(letra)
+            prevIndex = if (letra != letrasList.first()) index - 1 else -1
+            nextIndex = if (letra != letrasList.last()) index + 1 else -1
+
             tvGaleriaText = letraTxt
-            resName = "letras_${letraTxtLower}"
+            resName = if (letraTxt == "Ñ") "letras_enie" else "letras_${letraTxtLower}"
             resId = resources.getIdentifier(resName, "drawable", packageName)
             imgBitmap = AppCompatResources.getDrawable(this, resId)!!.toBitmap()
-        } else if (palabraId != 0) {
-            val palabra = db.palabraDao().get(palabraId)
+        } else if (palabra != null) {
             val palabraTxt = palabra.texto
             val palabraTxtLower = palabraTxt.lowercase()
-            val categoriaTxt = db.categoriaDao().get(palabra.categoria).nombre
-            val categoriaTxtLower = categoriaTxt.lowercase()
+
+            val categoriaTxt = categoria?.nombre
+            val categoriaTxtLower = categoriaTxt?.lowercase()
+
+            val index = palabrasList.indexOf(palabra)
+            prevIndex = if (palabra != palabrasList.first()) index - 1 else -1
+            nextIndex = if (palabra != palabrasList.last()) index + 1 else -1
 
             tvGaleriaText = palabraTxt
             resName = "${categoriaTxtLower}_${palabraTxtLower}"
@@ -118,6 +140,58 @@ class Galeria : Activity() {
             tstNoVideo.show()
         }
 
+        // Go to previous / next element
+        if (letra != null) {
+            if (prevIndex != -1) {
+                btnPrev.visibility = View.VISIBLE
+                btnPrev.setOnClickListener {
+                    val prevLetraId = if (prevIndex != -1) letrasList[prevIndex].id else 0
+                    val intent = Intent(this, Galeria::class.java)
+                    intent.putExtra("letra", prevLetraId)
+                    startActivity(intent)
+                }
+            } else {
+                btnPrev.visibility = View.INVISIBLE
+            }
+
+            if (nextIndex != -1) {
+                btnNext.visibility = View.VISIBLE
+                btnNext.setOnClickListener {
+                    val nextLetraId = letrasList[nextIndex].id
+                    val intent = Intent(this, Galeria::class.java)
+                    intent.putExtra("letra", nextLetraId)
+                    startActivity(intent)
+                }
+            } else {
+                btnNext.visibility = View.INVISIBLE
+            }
+        } else if (palabra != null) {
+            if (prevIndex != -1) {
+                btnPrev.visibility = View.VISIBLE
+                btnPrev.setOnClickListener {
+                    val prevPalabraId = if (prevIndex != -1) letrasList[prevIndex].id else 0
+                    val intent = Intent(this, Galeria::class.java)
+                    intent.putExtra("palabra", prevPalabraId)
+                    startActivity(intent)
+                }
+            } else {
+                btnPrev.visibility = View.INVISIBLE
+            }
+
+            if (nextIndex != -1) {
+                btnNext.visibility = View.VISIBLE
+                btnNext.setOnClickListener {
+                    val nextPalabraId = palabrasList[nextIndex].id
+                    val intent = Intent(this, Galeria::class.java)
+                    intent.putExtra("palabra", nextPalabraId)
+                    startActivity(intent)
+                }
+            } else {
+                btnNext.visibility = View.INVISIBLE
+            }
+        }
+
+        // Switch image / video
         swGaleria.setOnCheckedChangeListener { _, checked ->
             if (!checked) { // Video
                 galleryChange("video")
