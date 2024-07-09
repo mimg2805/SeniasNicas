@@ -11,12 +11,7 @@
 
     <!-- Más Apps -->
     <string name="mas_apps" translatable="false">Más Apps</string>
-    <string name="cursoestadisticabasica_title" translatable="false">Curso Estadística Básica</string>
-    <string name="cursoestadisticabasica_desc" translatable="false">Una guía para el aprendizaje de la estadística.</string>
-    <string name="nicaroadrage_title" translatable="false">Nica Road Rage</string>
-    <string name="nicaroadrage_desc" translatable="false">Un pequeño juego infinito de carreras para Android.</string>
-    <string name="purisima_title" translatable="false">Purísima</string>
-    <string name="purisima_desc" translatable="false">Un juego móvil casual basado en las festividades nicaragüenses de La Purísima.</string>
+    <string name="developer_url" translatable="false">https://play.google.com/store/apps/developer?id=Marcos+I.+Miranda+G.</string>
 
     <!-- Letras -->
     <string name="a">A</string>

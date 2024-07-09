@@ -32,10 +32,6 @@
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="MasApps"
-            android:exported="true"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="CategoriaPalabras"
             android:exported="true"
             android:screenOrientation="portrait" />

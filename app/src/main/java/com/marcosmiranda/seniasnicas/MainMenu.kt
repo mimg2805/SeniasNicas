@@ -20,7 +20,7 @@ class MainMenu : Activity() {
         // btnHistoria.setOnClickListener { startActivity(Intent(this, Historia::class.java)) }
 
         val btnMasApps = findViewById<Button>(R.id.activity_main_menu_btn_mas_apps)
-        btnMasApps.setOnClickListener { startActivity(Intent(this, MasApps::class.java)) }
+        btnMasApps.setOnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.developer_url)))) }
 
         val btnExit = findViewById<Button>(R.id.activity_main_menu_btn_exit)
         btnExit.setOnClickListener { finish() }
