@@ -25,4 +25,9 @@ class MainMenu : Activity() {
         val btnExit = findViewById<Button>(R.id.activity_main_menu_btn_exit)
         btnExit.setOnClickListener { finish() }
     }
+
+    override fun onDestroy() {
+        applicationContext.cacheDir.deleteRecursively()
+        super.onDestroy()
+    }
 }
