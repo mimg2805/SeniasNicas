@@ -73,33 +73,36 @@
 
     <Button
         android:id="@+id/activity_galeria_btn_video_restart"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="16dp"
-        android:background="@android:drawable/ic_media_rew"
+        android:background="@drawable/restart_icon"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/activity_galeria_btn_video_pause_play"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_galeria_vv_galeria_video" />
 
     <Button
         android:id="@+id/activity_galeria_btn_video_pause_play"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="20dp"
+        android:layout_height="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="64dp"
-        android:background="@android:drawable/ic_media_pause"
+        android:background="@drawable/pause_icon"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/activity_galeria_btn_video_restart"
         app:layout_constraintTop_toBottomOf="@+id/activity_galeria_vv_galeria_video" />
 
     <Button
         android:id="@+id/activity_galeria_btn_prev"
-        android:layout_width="32dp"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/arrow_left_icon"
+        android:background="@drawable/chevron_left_icon"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/activity_galeria_pv_galeria_image"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,11 +110,12 @@
 
     <Button
         android:id="@+id/activity_galeria_btn_next"
-        android:layout_width="32dp"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/arrow_right_icon"
+        android:background="@drawable/chevron_right_icon"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/activity_galeria_pv_galeria_image"

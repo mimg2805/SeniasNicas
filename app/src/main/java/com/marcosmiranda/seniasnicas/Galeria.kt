@@ -21,15 +21,15 @@ import com.github.chrisbanes.photoview.PhotoView
 
 class Galeria : Activity() {
 
-    private lateinit var tvGaleriaTitle : TextView
-    private lateinit var pvGaleriaImage : PhotoView
-    private lateinit var vvGaleriaVideo : VideoView
-    private lateinit var btnPrev : Button
-    private lateinit var btnNext : Button
-    private lateinit var btnVideoRestart : Button
-    private lateinit var btnVideoPausePlay : Button
-    private lateinit var swGaleria : SwitchCompat
-    private lateinit var tstNoVideo : Toast
+    private lateinit var tvGaleriaTitle: TextView
+    private lateinit var pvGaleriaImage: PhotoView
+    private lateinit var vvGaleriaVideo: VideoView
+    private lateinit var btnPrev: Button
+    private lateinit var btnNext: Button
+    private lateinit var btnVideoRestart: Button
+    private lateinit var btnVideoPausePlay: Button
+    private lateinit var swGaleria: SwitchCompat
+    private lateinit var tstNoVideo: Toast
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,15 +63,15 @@ class Galeria : Activity() {
         // Custom media controls
         btnVideoRestart.setOnClickListener {
             vvGaleriaVideo.resume()
-            btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_pause)
+            changePlayPause("pause")
         }
         btnVideoPausePlay.setOnClickListener {
             if (vvGaleriaVideo.isPlaying) {
                 vvGaleriaVideo.pause()
-                btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_play)
+                changePlayPause("play")
             } else {
                 vvGaleriaVideo.start()
-                btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_pause)
+                changePlayPause("pause")
             }
         }
 
@@ -218,7 +218,7 @@ class Galeria : Activity() {
                 vvGaleriaVideo.start()
                 btnVideoRestart.visibility = View.VISIBLE
                 btnVideoPausePlay.visibility = View.VISIBLE
-                btnVideoPausePlay.background = AppCompatResources.getDrawable(this, android.R.drawable.ic_media_pause)
+                changePlayPause("pause")
                 swGaleria.text = getString(R.string.galeria_video)
             }
             else -> return
@@ -346,5 +346,17 @@ class Galeria : Activity() {
         }
 
         return wordBitmap
+    }
+
+    private fun changePlayPause(mode: String = "pause") {
+        if (mode == "play") {
+            btnVideoPausePlay.background = AppCompatResources.getDrawable(this, R.drawable.play_icon)
+            btnVideoPausePlay.width = 24
+            btnVideoPausePlay.height = 32
+        } else if (mode == "pause") {
+            btnVideoPausePlay.background = AppCompatResources.getDrawable(this, R.drawable.pause_icon)
+            btnVideoPausePlay.width = 20
+            btnVideoPausePlay.height = 32
+        }
     }
 }

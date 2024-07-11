@@ -58,12 +58,12 @@ class Diccionario : Activity() {
             when (ctgId) {
                 1 -> {
                     // Anatomía
-                    btnIconId = R.drawable.male_icon
+                    btnIconId = R.drawable.person_icon
                     btnColorId = R.drawable.tan_button
                 }
                 2 -> {
                     // Animales
-                    btnIconId = R.drawable.animal_prints_icon
+                    btnIconId = R.drawable.paw_icon
                     btnColorId = R.drawable.brown_button
                 }
                 3 -> {
@@ -83,7 +83,7 @@ class Diccionario : Activity() {
                 // }
                 6 -> {
                     // Deportes
-                    btnIconId = R.drawable.sign_language_icon
+                    btnIconId = R.drawable.soccer_icon
                     btnColorId = R.drawable.tan_button
                 }
                 7 -> {
@@ -93,12 +93,12 @@ class Diccionario : Activity() {
                 }
                 8 -> {
                     // Emergencias
-                    btnIconId = R.drawable.med_cross_icon
+                    btnIconId = R.drawable.truck_medical_icon
                     btnColorId = R.drawable.red_button
                 }
                 9 -> {
                     // Familia
-                    btnIconId = R.drawable.users_icon
+                    btnIconId = R.drawable.people_roof_icon
                     btnColorId = R.drawable.pink_button
                 }
                 10 -> {
@@ -143,7 +143,7 @@ class Diccionario : Activity() {
                 }
                 18 -> {
                     // Transporte
-                    btnIconId = R.drawable.car_icon
+                    btnIconId = R.drawable.car_side_icon
                     btnColorId = R.drawable.gray_button
                 }
                 19 -> {

@@ -24,7 +24,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/fist_icon"
+            android:background="@drawable/hand_fist_icon"
             android:contentDescription="@string/abecedario" />
 
         <TextView
